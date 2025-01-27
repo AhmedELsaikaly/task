@@ -50,7 +50,7 @@ export const Filters = () => {
   });
   const salaryTo = form.watch('salaryTo');
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {};
+  const onSubmit = () => {};
 
   return (
     <div className="border-border bg-white shadow-sm py-2 px-4 rounded-lg">

@@ -1,9 +1,7 @@
 import * as React from 'react';
 import {Slot} from '@radix-ui/react-slot';
-import {ChevronRight, MoreHorizontal, Slash} from 'lucide-react';
-
+import {MoreHorizontal, Slash} from 'lucide-react';
 import {cn} from '@/lib/utils';
-import {ROUTES} from '@/constants';
 import {Typography} from './typography';
 
 const Breadcrumb = React.forwardRef<

@@ -24,7 +24,7 @@ export const JobReminder = () => {
     },
   });
 
-  const onSubmit = (data: {email: string}) => {};
+  const onSubmit = () => {};
   return (
     <div className="bg-customBlue rounded-md p-4">
       <Typography as="h3" variant="h5">

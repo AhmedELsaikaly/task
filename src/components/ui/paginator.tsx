@@ -79,6 +79,7 @@ type PaginatorProps = {
   showPreviousNext: boolean;
   totalItems: number;
   itemsPerPage: number;
+  className?: string;
 };
 
 export const Paginator = ({
@@ -87,19 +88,22 @@ export const Paginator = ({
   itemsPerPage,
   onPageChange,
   showPreviousNext,
+  className = '',
 }: PaginatorProps) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage); // Total number of pages
 
   return (
-    <Pagination>
+    <Pagination className={className}>
       <PaginationContent>
         {showPreviousNext && totalPages ? (
           <div>
             <PaginationItem>
               <PaginationPrevious
                 onClick={() => onPageChange(currentPage - 1)}
-                className={`${
-                  currentPage - 1 < 1 ? 'pointer-events-none' : ''
+                className={`w-9 h-9 items-center justify-center flex rounded-full ${
+                  currentPage - 1 < 1
+                    ? 'pointer-events-none bg-gray'
+                    : 'bg-primary [&_path]:stroke-white'
                 }`}
               />
             </PaginationItem>
@@ -113,8 +117,10 @@ export const Paginator = ({
         {showPreviousNext && totalPages ? (
           <PaginationItem>
             <PaginationNext
-              className={`${
-                currentPage > totalPages - 1 ? 'pointer-events-none' : ''
+              className={` w-9 h-9 items-center justify-center flex rounded-full ${
+                currentPage > totalPages - 1
+                  ? 'pointer-events-none bg-gray '
+                  : 'bg-primary [&_path]:stroke-white'
               }`}
               onClick={() => onPageChange(currentPage + 1)}
             />

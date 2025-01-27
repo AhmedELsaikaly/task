@@ -1,14 +1,7 @@
 import {IJobItem} from '@/types';
 import {FC} from 'react';
 import {Badge} from '../ui/badge';
-import {
-  Bookmark,
-  Clock,
-  MapPin,
-  Plus,
-  ShieldCheck,
-  Verified,
-} from 'lucide-react';
+import {Bookmark, Clock, MapPin, Plus, ShieldCheck} from 'lucide-react';
 import {Typography} from '../ui';
 import {useTranslation} from 'react-i18next';
 

@@ -16,7 +16,7 @@ import {useTranslation} from 'react-i18next';
 
 export const HomePage = () => {
   const {t} = useTranslation();
-  const {data, loading, error} = useCallApi(fetchJobList);
+  const {data, loading} = useCallApi(fetchJobList);
 
   return (
     <>
@@ -69,7 +69,7 @@ export const HomePage = () => {
                   </div>
                 </>
               ) : (
-                <JobsList loading={loading} data={data} />
+                <JobsList data={data} />
               )}
             </div>
           </div>

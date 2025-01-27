@@ -3,13 +3,9 @@ import {ItemsListHeader} from '../items-list-header';
 import {IJobItem} from '@/types';
 import {JobCard} from '../job-card';
 import {usePagination} from '@/hooks';
-import {Paginator} from '../ui/pagination-comp';
-import JobCardSkeleton from '../job-card/job-card-skeleton';
+import {Paginator} from '../ui/paginator';
 
-export const JobsList: FC<{data: IJobItem[]; loading: boolean}> = ({
-  data,
-  loading,
-}) => {
+export const JobsList: FC<{data: IJobItem[]}> = ({data}) => {
   const [viewType, setViewType] = useState<'cards' | 'list'>('cards');
   const {
     currentData,
@@ -40,8 +36,9 @@ export const JobsList: FC<{data: IJobItem[]; loading: boolean}> = ({
             ))}
         </div>
       </div>
-      <div className="mt-8">
+      <div className="mt-8 flex items-start">
         <Paginator
+          className="justify-start"
           showPreviousNext
           totalItems={totalItems}
           itemsPerPage={itemsPerPage}

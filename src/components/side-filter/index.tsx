@@ -59,7 +59,7 @@ export const SideFilter = () => {
   });
   const salaryTo = form.watch('salaryTo');
 
-  const onSubmit = (data: FormValues) => {};
+  const onSubmit = () => {};
   return (
     <div className="border-gray-100 border bg-white shadow-sm rounded-lg p-4">
       <Form {...form}>
